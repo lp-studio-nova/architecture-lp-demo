@@ -1,5 +1,5 @@
 /**
- * Architecture LP Demo - Script
+ * Architecture LP Demo - Enhanced Script
  * Handles animations, smooth scrolling, and parallax
  */
 
@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                observer.unobserve(entry.target);
             }
         });
     };
@@ -18,38 +17,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealObserver = new IntersectionObserver(revealCallback, {
         root: null,
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: '0px 0px -100px 0px'
     });
 
     const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach(el => revealObserver.observe(el));
 
 
-    // 2. Simple Parallax Effect for Concept Background
-    const parallaxBg = document.getElementById('parallax-bg');
-    if (parallaxBg) {
-        window.addEventListener('scroll', () => {
-            const scrollPos = window.pageYOffset;
-            const targetY = scrollPos * 0.2; // Adjust speed
-            parallaxBg.style.transform = `translateY(${targetY}px)`;
+    // 2. Parallax Scrolling for Works Sections
+    const workImages = document.querySelectorAll('.work-parallax-img');
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        
+        workImages.forEach(img => {
+            const parent = img.closest('.work-section');
+            const parentOffset = parent.offsetTop;
+            const parentHeight = parent.offsetHeight;
+            const winHeight = window.innerHeight;
+
+            if (scrolled + winHeight > parentOffset && scrolled < parentOffset + parentHeight) {
+                const relativeScroll = scrolled - parentOffset;
+                const translateY = relativeScroll * 0.15;
+                img.style.transform = `translateY(${translateY}px)`;
+            }
         });
-    }
+    });
 
 
-    // 3. Header Visibility on Scroll
+    // 3. Header Visibility & Style on Scroll
     const header = document.querySelector('.header');
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
 
         if (currentScroll > 100) {
-            header.style.backgroundColor = 'rgba(248, 248, 248, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
-            header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.02)';
+            header.classList.add('scrolled');
         } else {
-            header.style.backgroundColor = 'transparent';
-            header.style.backdropFilter = 'none';
-            header.style.boxShadow = 'none';
+            header.classList.remove('scrolled');
         }
     });
 
@@ -58,12 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     anchorLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
             const targetId = link.getAttribute('href');
             if (targetId === '#') return;
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
+                e.preventDefault();
                 window.scrollTo({
                     top: targetElement.offsetTop,
                     behavior: 'smooth'
@@ -71,5 +75,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 5. Contact Form Submission
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('お問い合わせありがとうございます。メッセージを受け付けました。');
+            contactForm.reset();
+        });
+    }
 
 });

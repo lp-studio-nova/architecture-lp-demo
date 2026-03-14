@@ -28,6 +28,9 @@
                 <span class="logo-jp">デザインスタジオ</span>
             </a>
             <nav class="nav">
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#service" class="nav-link">SERVICE</a>
+                <a href="#works" class="nav-link">WORKS</a>
                 <a href="#contact" class="nav-contact">CONTACT</a>
             </nav>
         </div>
@@ -36,7 +39,7 @@
     <!-- HERO Section -->
     <section class="hero">
         <div class="hero-video-wrapper">
-            <video class="hero-video" src="https://player.vimeo.com/external/494252666.sd.mp4?s=7240c16922336340245648f9d643d92003c40132&profile_id=165&oauth2_token_id=57447761" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"></video>
+            <video class="hero-video ken-burns" src="https://player.vimeo.com/external/494252666.sd.mp4?s=7240c16922336340245648f9d643d92003c40132&profile_id=165&oauth2_token_id=57447761" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"></video>
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
@@ -48,60 +51,121 @@
                     <span>唯一無二の空間を創る<br>デザインスタジオ</span>
                 </p>
             </div>
-            <div class="hero-cta reveal">
+            <div class="hero-cta reveal" style="transition-delay: 0.5s;">
                 <a href="#contact" class="btn-primary">お問い合わせ</a>
             </div>
         </div>
     </section>
 
-    <!-- CONCEPT Section -->
-    <section class="concept section">
-        <div class="concept-bg-parallax" id="parallax-bg"></div>
-        <div class="container">
-            <div class="concept-content">
-                <div class="concept-text-wrapper reveal">
-                    <p class="concept-en">CONCEPT</p>
-                    <h2 class="concept-title vertical">
-                        <span>感性を、カタチに。</span>
-                    </h2>
-                    <p class="concept-desc">
-                        世界を旅し磨き上げた感性で、<br>
-                        唯一無二の空間デザインを提供します。
+    <!-- ABOUT Section -->
+    <section class="about section" id="about">
+        <div class="container site-info">
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p class="section-label">ABOUT US</p>
+                    <h2 class="section-heading">哲学を、空間に宿す</h2>
+                    <p class="section-text">
+                        私たちは、単なる建物を造るのではなく、そこに住まう人の人生を豊かにする「芸術作品」としての空間を創造します。世界各地の建築文化を肌で感じ、磨き上げた独自の審美眼と技術。無駄を削ぎ落としたミニマリズムの中に、圧倒的な個性が息づくデザインを提案します。
                     </p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WORKS Section -->
-    <section class="works section">
-        <div class="container">
-            <div class="section-header reveal">
-                <p class="section-label">SELECTED WORKS</p>
-                <h2 class="section-title">施工事例</h2>
-            </div>
-            <div class="works-grid">
-                <article class="work-card reveal">
-                    <div class="work-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Luxury Villa" class="work-image">
-                    </div>
-                    <div class="work-info">
-                        <h3 class="work-name">Luxury Villa</h3>
-                        <p class="work-desc">自然と調和するモダンな別邸。光と影が織りなす究極のプライベート空間。</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta section" id="contact">
-        <div class="container text-center">
-            <div class="cta-inner reveal">
-                <h2 class="cta-title">理想の空間づくりを<br>ご相談ください</h2>
-                <div class="cta-button-wrapper">
-                    <a href="mailto:info@example.com" class="btn-large">CONTACT</a>
+                <div class="about-image-wrapper reveal" style="transition-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1518005020610-4cf0139b4f7e?q=80&w=2070&auto=format&fit=crop" alt="Office space" class="about-image">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE Section -->
+    <section class="service section" id="service">
+        <div class="container site-info">
+            <p class="section-label text-center">OUR SERVICES</p>
+            <div class="service-grid">
+                <div class="service-item reveal">
+                    <span class="service-num">01</span>
+                    <h3 class="service-title">Architecture Design</h3>
+                    <p class="service-desc">敷地の持つ文脈を読み解き、時の試練に耐えうる普遍的な建築を設計します。構造美と機能美の融合を目指します。</p>
+                </div>
+                <div class="service-item reveal" style="transition-delay: 0.2s;">
+                    <span class="service-num">02</span>
+                    <h3 class="service-title">Interior Design</h3>
+                    <p class="service-desc">素材の質感、光の入り方、家具一つひとつの配置に至るまで。ディテールにこだわり、情緒豊かな室内空間を演出します。</p>
+                </div>
+                <div class="service-item reveal" style="transition-delay: 0.4s;">
+                    <span class="service-num">03</span>
+                    <h3 class="service-title">Total Planning</h3>
+                    <p class="service-desc">土地探しから植栽、照明計画、アートの選定まで。ライフスタイルをトータルでコーディネートし、唯一無二の世界観を築きます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKS Section (Full Screen Per Work) -->
+    <section class="works" id="works">
+        
+        <article class="work-section fullscreen-section" id="work-01">
+            <div class="work-bg">
+                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop" alt="Luxury Villa" class="work-parallax-img">
+                <div class="work-overlay"></div>
+            </div>
+            <div class="work-content container">
+                <div class="work-text-block">
+                    <p class="work-en reveal">PROJECT 01</p>
+                    <h2 class="work-name reveal">Luxury Villa</h2>
+                    <p class="work-desc reveal">自然と調和するモダンな別邸。光と影が織りなす究極のプライベート空間。</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="work-section fullscreen-section" id="work-02">
+            <div class="work-bg">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop" alt="Modern Residence" class="work-parallax-img">
+                <div class="work-overlay"></div>
+            </div>
+            <div class="work-content container">
+                <div class="work-text-block">
+                    <p class="work-en reveal">PROJECT 02</p>
+                    <h2 class="work-name reveal">Modern Residence</h2>
+                    <p class="work-desc reveal">都市の喧騒を忘れさせる、静寂に包まれたモダンな都市型住宅。</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="work-section fullscreen-section" id="work-03">
+            <div class="work-bg">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop" alt="Resort Villa" class="work-parallax-img">
+                <div class="work-overlay"></div>
+            </div>
+            <div class="work-content container">
+                <div class="work-text-block">
+                    <p class="work-en reveal">PROJECT 03</p>
+                    <h2 class="work-name reveal">Resort Villa</h2>
+                    <p class="work-desc reveal">海を望む絶好のロケーション。開放感あふれるリゾートスタイルの空間デザイン。</p>
+                </div>
+            </div>
+        </article>
+
+    </section>
+
+    <!-- CONTACT Section -->
+    <section class="contact section" id="contact">
+        <div class="container narrow">
+            <div class="cta-inner reveal text-center">
+                <p class="section-label">CONTACT</p>
+                <h2 class="cta-title">理想の空間づくりを<br>ご相談ください</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="お名前" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="メールアドレス" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="お問い合わせ内容" rows="5" required></textarea>
+                    </div>
+                    <div class="form-button-wrapper">
+                        <button type="submit" class="btn-large">SEND MESSAGE</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
