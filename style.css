@@ -1,0 +1,436 @@
+/* =========================================================================
+   # Design Tokens
+   ========================================================================= */
+
+   :root {
+    --color-bg: #f8f8f8;
+    --color-text: #1a1a1a;
+    --color-accent: #000000;
+    --color-white: #ffffff;
+    --color-overlay: rgba(0, 0, 0, 0.4);
+
+    --font-jp: 'Noto Sans JP', sans-serif;
+    --font-en: 'Josefin Sans', sans-serif;
+
+    --transition-smooth: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.3s ease;
+}
+
+/* =========================================================================
+   # Reset & Base
+   ========================================================================= */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-jp);
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-fast);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.section {
+    padding: 160px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* =========================================================================
+   # Typography
+   ========================================================================= */
+
+.vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.section-label {
+    font-family: var(--font-en);
+    font-weight: 300;
+    font-size: 0.8rem;
+    letter-spacing: 0.4em;
+    margin-bottom: 2rem;
+    color: var(--color-text);
+    opacity: 0.6;
+}
+
+/* =========================================================================
+   # Header
+   ========================================================================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 30px 0;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-en {
+    font-family: var(--font-en);
+    font-weight: 300;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.logo-jp {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    margin-top: -4px;
+}
+
+.nav-contact {
+    font-family: var(--font-en);
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid var(--color-text);
+    padding-bottom: 2px;
+}
+
+.nav-contact:hover {
+    opacity: 0.5;
+}
+
+/* =========================================================================
+   # Hero
+   ========================================================================= */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    overflow: hidden;
+}
+
+.hero-video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-overlay);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    z-index: 1;
+}
+
+.hero-copy-wrapper {
+    display: flex;
+    gap: 40px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--color-white);
+    color: var(--color-text);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    transition: var(--transition-fast);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+/* =========================================================================
+   # Concept
+   ========================================================================= */
+
+.concept {
+    position: relative;
+    background-color: var(--color-bg);
+}
+
+.concept-bg-parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    background-image: url('https://images.unsplash.com/photo-1503387762-592dea58ef4e?q=80&w=2066&auto=format&fit=crop'); /* Architectural sketch feel */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.concept-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    padding: 80px 0;
+}
+
+.concept-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.concept-en {
+    font-family: var(--font-en);
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    opacity: 0.4;
+}
+
+.concept-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.concept-desc {
+    max-width: 600px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 2.2;
+}
+
+/* =========================================================================
+   # Works
+   ========================================================================= */
+
+.works {
+    background-color: var(--color-white);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+}
+
+.works-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.work-card {
+    width: 100%;
+    max-width: 900px;
+}
+
+.work-image-wrapper {
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.work-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work-card:hover .work-image {
+    transform: scale(1.05);
+}
+
+.work-info {
+    text-align: left;
+}
+
+.work-name {
+    font-family: var(--font-en);
+    font-weight: 300;
+    font-size: 1.8rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.work-desc {
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+/* =========================================================================
+   # CTA
+   ========================================================================= */
+
+.cta {
+    background-color: var(--color-bg);
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 50px;
+}
+
+.btn-large {
+    display: inline-block;
+    padding: 20px 80px;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    font-family: var(--font-en);
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    transition: var(--transition-fast);
+}
+
+.btn-large:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* =========================================================================
+   # Footer
+   ========================================================================= */
+
+.footer {
+    padding: 60px 0;
+    background-color: var(--color-bg);
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.copyright {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    font-family: var(--font-en);
+    letter-spacing: 0.1em;
+}
+
+/* =========================================================================
+   # Animations
+   ========================================================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition-smooth);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================================
+   # Responsive
+   ========================================================================= */
+
+@media (max-width: 768px) {
+    .section {
+        padding: 100px 0;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-copy-wrapper {
+        gap: 20px;
+    }
+
+    .concept-title {
+        font-size: 2rem;
+    }
+
+    .work-image-wrapper {
+        height: 40vh;
+    }
+
+    .cta-title {
+        font-size: 1.8rem;
+    }
+
+    .btn-large {
+        padding: 18px 50px;
+    }
+}
